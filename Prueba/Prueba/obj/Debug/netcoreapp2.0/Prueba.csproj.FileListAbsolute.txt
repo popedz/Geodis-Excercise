@@ -1,0 +1,11 @@
+C:\Users\L029934\source\repos\Prueba\Prueba\bin\Debug\netcoreapp2.0\Prueba.deps.json
+C:\Users\L029934\source\repos\Prueba\Prueba\bin\Debug\netcoreapp2.0\Prueba.runtimeconfig.json
+C:\Users\L029934\source\repos\Prueba\Prueba\bin\Debug\netcoreapp2.0\Prueba.runtimeconfig.dev.json
+C:\Users\L029934\source\repos\Prueba\Prueba\bin\Debug\netcoreapp2.0\Prueba.dll
+C:\Users\L029934\source\repos\Prueba\Prueba\obj\Debug\netcoreapp2.0\Prueba.csprojResolveAssemblyReference.cache
+C:\Users\L029934\source\repos\Prueba\Prueba\obj\Debug\netcoreapp2.0\Prueba.csproj.CoreCompileInputs.cache
+C:\Users\L029934\source\repos\Prueba\Prueba\obj\Debug\netcoreapp2.0\Prueba.AssemblyInfoInputs.cache
+C:\Users\L029934\source\repos\Prueba\Prueba\obj\Debug\netcoreapp2.0\Prueba.AssemblyInfo.cs
+C:\Users\L029934\source\repos\Prueba\Prueba\bin\Debug\netcoreapp2.0\Prueba.pdb
+C:\Users\L029934\source\repos\Prueba\Prueba\obj\Debug\netcoreapp2.0\Prueba.dll
+C:\Users\L029934\source\repos\Prueba\Prueba\obj\Debug\netcoreapp2.0\Prueba.pdb
