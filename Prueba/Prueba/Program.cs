@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -190,18 +191,34 @@ namespace Prueba
 ;
             #endregion
 
-            var obj = JsonConvert.DeserializeAnonymousType(jsonString, new List<User>());
+            var obj1 = JsonConvert.DeserializeAnonymousType(jsonString, new List<User>());
+            var obj2 = JsonConvert.DeserializeAnonymousType(jsonString, new List<Blog>());
+            var obj3 = JsonConvert.DeserializeAnonymousType(jsonString, new List<Comment>());
+            var response = "";
 
-            var listUsers = obj.Select(u => 
-                    new User { _entity = u._entity, Id = u.Id, FirstName = u.FirstName, LastName = u.LastName, Age = u.Age, Blogs = new List<Blog>() });
+            if (obj1[0]._entity == "User")
+            {
+                response = JsonConvert.SerializeObject(new
+                {
+                    users = obj1.Select(u =>
+new User { _entity = u._entity, Id = u.Id, FirstName = u.FirstName, LastName = u.LastName, Age = u.Age }),
 
-            var listBlogs = obj.SelectMany(u => u.Blogs.Select(b =>
-                    new { _entity = b._entity, id = b.Id, userId = b.User.Id, title = b.Title, body = b.Body }));
+                    blogs = obj1.SelectMany(u => u.Blogs.Select(b =>
+                       new Blog { _entity = b._entity, Id = b.Id, Title = b.Title, Body = b.Body })),
 
-            var listComments = obj.SelectMany(u => u.Blogs.SelectMany(b => b.Comments.Select(c => 
-                    new { _entity = c._entity, id = c.Id, blogId = b.Id, body = c.Body, userId=c.User.Id})));
+                    comments = obj1.SelectMany(u => u.Blogs.SelectMany(b => b.Comments.Select(c =>
+                        new Comment { _entity = c._entity, Id = c.Id, Body = c.Body })))
+                });
+            }
+            else if (obj2[0]._entity == "Blog")
+            {
+                //response = // NEW mapping for different Json Tree structure
+            }
+            else if (obj3[0]._entity =="Comment" )
+            {
+                //response = // NEW mapping for different Json Tree structure
+            }
 
-            var response = JsonConvert.SerializeObject(new { users = listUsers, blogs = listBlogs, comments = listComments });
 
             Console.WriteLine(response);
             Console.ReadKey();
